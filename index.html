@@ -2,13 +2,1225 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=website.html">
-    <title>因陀羅華基金會 - Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>因陀羅華基金會 - 護持佛法於AI時代</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif TC', 'Microsoft YaHei', serif;
+            line-height: 1.8;
+            color: #2D3748;
+            background: #ffffff;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(253, 251, 248, 0.95);
+            backdrop-filter: blur(15px);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            box-shadow: 0 2px 30px rgba(217, 119, 6, 0.1);
+            border-bottom: 1px solid rgba(217, 119, 6, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .logo-image {
+            height: 40px;
+            width: auto;
+            margin-right: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #ab1a1f;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .logo-text::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ab1a1f, #ab1a1f);
+            transition: width 0.3s ease;
+        }
+
+        .logo:hover .logo-image {
+            transform: scale(1.1);
+        }
+
+        .logo:hover .logo-text::after {
+            width: 100%;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2D3748;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #ab1a1f, #ab1a1f);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover {
+            color: #ab1a1f;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        main {
+            margin-top: 80px;
+        }
+
+        section {
+            padding: 4rem 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transform: translateY(50px) scale(0.9);
+        }
+        
+        section.animate {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: -2;
+            object-fit: cover;
+            animation: videoZoom 20s ease-in-out infinite;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(171, 26, 31, 0.7) 0%,
+                rgba(171, 26, 31, 0.5) 25%,
+                rgba(0, 0, 0, 0.3) 50%,
+                rgba(171, 26, 31, 0.5) 75%,
+                rgba(171, 26, 31, 0.7) 100%
+            );
+            z-index: -1;
+            animation: gradientShift 15s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(
+                circle at center,
+                transparent 0%,
+                rgba(0, 0, 0, 0.2) 100%
+            );
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            color: #ffffff;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero h1::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.3), 
+                transparent
+            );
+            animation: shimmer 3s ease-in-out 2s infinite;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+            font-weight: 300;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1.2s ease-out 0.3s both;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.2s ease-out 0.6s both;
+        }
+
+        .btn {
+            padding: 1.2rem 2.8rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        
+        .btn:hover {
+            transform: perspective(1000px) rotateY(-5deg) translateY(-5px);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.4s ease;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, rgba(171, 26, 31, 0.9), rgba(171, 26, 31, 0.8));
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, rgba(171, 26, 31, 1), rgba(171, 26, 31, 0.9));
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(171, 26, 31, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2D3748;
+            font-weight: 300;
+            position: relative;
+            letter-spacing: 1px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #ab1a1f, #ab1a1f);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #64748B;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(171, 26, 31, 0.1);
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(171, 26, 31, 0.05);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(50px) scale(0.9);
+        }
+        
+        .card.animate {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .card-icon {
+            margin-bottom: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .card:hover {
+            transform: translateY(-15px) scale(1.03) rotateY(5deg);
+            box-shadow: 0 25px 80px rgba(171, 26, 31, 0.2);
+            border-color: rgba(171, 26, 31, 0.15);
+        }
+        
+        .card:hover .card-icon {
+            transform: scale(1.1) rotate(10deg);
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ab1a1f, #ab1a1f);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(171, 26, 31, 0.15);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 0.2; }
+        }
+
+        @keyframes lotus-glow {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        .card-icon {
+            font-size: 3.5rem;
+            color: #ab1a1f;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 8px rgba(171, 26, 31, 0.2);
+            animation: lotus-glow 3s ease-in-out infinite;
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.2rem;
+            color: #2D3748;
+            font-weight: 400;
+            position: relative;
+        }
+
+        .card h3::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(180deg, #ab1a1f, #ab1a1f);
+            border-radius: 2px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover h3::before {
+            opacity: 1;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #E2E8F0;
+        }
+
+        .tab {
+            padding: 1rem 2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: #64748B;
+            transition: all 0.3s ease;
+            position: relative;
+            border-radius: 25px;
+            margin: 0 0.5rem;
+        }
+
+        .tab::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #ab1a1f, #ab1a1f);
+            opacity: 0;
+            border-radius: 25px;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .tab.active {
+            color: white;
+            border-bottom: none;
+        }
+
+        .tab.active::before {
+            opacity: 1;
+        }
+
+        .tab:hover {
+            color: #ab1a1f;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .project-flow {
+            display: flex;
+            align-items: stretch;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .flow-item {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(217, 119, 6, 0.1);
+            text-align: center;
+            flex: 1;
+            min-width: 280px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(217, 119, 6, 0.15);
+            position: relative;
+        }
+
+
+
+        .flow-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(217, 119, 6, 0.2);
+        }
+
+        .flow-arrow {
+            font-size: 2.5rem;
+            color: #ab1a1f;
+            text-shadow: 0 2px 4px rgba(171, 26, 31, 0.2);
+            animation: float 2s ease-in-out infinite;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: #E2E8F0;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #ab1a1f;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: #ab1a1f;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2D3748, #1A202C);
+            color: #E2E8F0;
+            text-align: center;
+            padding: 3rem 0;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ab1a1f, transparent);
+        }
+
+        /* Enhanced Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px) scale(0.95);
+                filter: blur(5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-8px) rotate(1deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(0deg);
+            }
+            75% {
+                transform: translateY(-8px) rotate(-1deg);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 12px 40px rgba(171, 26, 31, 0.3);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% center;
+            }
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        @keyframes videoZoom {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+        }
+
+        @keyframes gradientShift {
+            0%, 100% {
+                background: linear-gradient(
+                    135deg,
+                    rgba(171, 26, 31, 0.7) 0%,
+                    rgba(171, 26, 31, 0.5) 25%,
+                    rgba(0, 0, 0, 0.3) 50%,
+                    rgba(171, 26, 31, 0.5) 75%,
+                    rgba(171, 26, 31, 0.7) 100%
+                );
+            }
+            50% {
+                background: linear-gradient(
+                    135deg,
+                    rgba(171, 26, 31, 0.8) 0%,
+                    rgba(171, 26, 31, 0.6) 25%,
+                    rgba(0, 0, 0, 0.4) 50%,
+                    rgba(171, 26, 31, 0.6) 75%,
+                    rgba(171, 26, 31, 0.8) 100%
+                );
+            }
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .btn {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 280px;
+                text-align: center;
+            }
+            
+            .hero-video {
+                object-position: center;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .project-flow {
+                flex-direction: column;
+            }
+            
+            .flow-arrow {
+                transform: rotate(90deg);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to <a href="website.html">website.html</a>...</p>
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo">
+                <img class="logo-image" src="assets/Injrajala Logo_0531_LOGO.png" alt="因陀羅華基金會 Logo" />
+
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">首頁</a></li>
+                <li><a href="#mission">使命</a></li>
+                <li><a href="#projects">計劃項目</a></li>
+                <li><a href="#involvement">護持參與</a></li>
+                <li><a href="#about">關於我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 首頁 -->
+        <section id="home" class="hero">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="assets/Injrajala wheel.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>護持古老智慧於AI新時代</h1>
+                    <p>在人工智慧蓬勃發展的時代，我們致力於建構可信賴的佛學知識庫，讓佛法智慧能夠正確傳承並普及於世界各地，同時確保AI技術能夠準確理解和傳達佛教教義。</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn btn-primary">瞭解計劃項目</a>
+                        <a href="#involvement" class="btn btn-secondary">護持參與</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 使命 -->
+        <section id="mission">
+            <div class="container">
+                <h2 class="section-title">我們的使命</h2>
+                <p class="section-subtitle">在資訊爆炸的時代，佛法的傳承面臨前所未有的挑戰與機遇</p>
+                
+                <div class="grid">
+                    <div class="card">
+                        <div class="card-icon">
+
+                            <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="warningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#ab1a1f;stop-opacity:0.8" />
+                                        <stop offset="100%" style="stop-color:#ab1a1f;stop-opacity:0.6" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- 三角形警告框 -->
+                                <path d="M50 10 L85 75 L15 75 Z" fill="none" stroke="url(#warningGradient)" stroke-width="2" stroke-linejoin="round"/>
+                                <!-- 感嘆號 -->
+                                <line x1="50" y1="30" x2="50" y2="55" stroke="url(#warningGradient)" stroke-width="3" stroke-linecap="round"/>
+                                <circle cx="50" cy="65" r="2.5" fill="url(#warningGradient)"/>
+                                <!-- 破碎線條表示混亂 -->
+                                <path d="M25 85 Q30 82 35 85 Q40 88 45 85" fill="none" stroke="url(#warningGradient)" stroke-width="1.5" opacity="0.7"/>
+                                <path d="M55 85 Q60 88 65 85 Q70 82 75 85" fill="none" stroke="url(#warningGradient)" stroke-width="1.5" opacity="0.7"/>
+                            </svg>
+                        </div>
+                        <h3>當前挑戰</h3>
+                        <p>網路上的佛學資訊品質參差不齊，AI訓練時可能學習到錯誤或偏頗的佛法詮釋，導致希望學習佛法的人無法正確理
+                            解佛法。缺乏系統性的佛學知識整理，使得珍貴的佛法智慧難以有效傳播。</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">
+                            <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="solutionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#ab1a1f;stop-opacity:0.8" />
+                                        <stop offset="50%" style="stop-color:#ab1a1f;stop-opacity:0.6" />
+                                        <stop offset="100%" style="stop-color:#ab1a1f;stop-opacity:0.4" />
+                                    </linearGradient>
+                                </defs>
+                                <!-- 燈泡外框 -->
+                                <path d="M50 15 Q65 15 65 35 Q65 50 60 55 L40 55 Q35 50 35 35 Q35 15 50 15 Z" 
+                                      fill="none" stroke="url(#solutionGradient)" stroke-width="2"/>
+                                <!-- 燈泡底座 -->
+                                <rect x="42" y="55" width="16" height="8" rx="2" fill="none" stroke="url(#solutionGradient)" stroke-width="1.5"/>
+                                <rect x="45" y="63" width="10" height="4" rx="1" fill="none" stroke="url(#solutionGradient)" stroke-width="1.5"/>
+                                <!-- 光芒線條 -->
+                                <g stroke="url(#solutionGradient)" stroke-width="1.5" stroke-linecap="round" opacity="0.8">
+                                    <line x1="50" y1="5" x2="50" y2="10"/>
+                                    <line x1="75" y1="25" x2="70" y2="28"/>
+                                    <line x1="80" y1="45" x2="75" y2="45"/>
+                                    <line x1="75" y1="65" x2="70" y2="62"/>
+                                    <line x1="25" y1="25" x2="30" y2="28"/>
+                                    <line x1="20" y1="45" x2="25" y2="45"/>
+                                    <line x1="25" y1="65" x2="30" y2="62"/>
+                                </g>
+                                <!-- 內部螺旋線表示創意 -->
+                                <path d="M45 25 Q50 20 55 25 Q50 30 45 25" fill="none" stroke="url(#solutionGradient)" stroke-width="1" opacity="0.6"/>
+                            </svg>
+                        </div>
+                        <h3>解決方案</h3>
+                        <p>建立經過認證的開源佛學知識庫，結合傳統佛學素養與現代科技，創造可信賴的佛法學習平台。透過嚴謹的學術驗證和技術創新，確保佛法正確傳承。</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-icon">
+                            <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="certGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#D97706;stop-opacity:0.9" />
+                                        <stop offset="50%" style="stop-color:#F59E0B;stop-opacity:0.7" />
+                                        <stop offset="100%" style="stop-color:#FBB042;stop-opacity:0.5" />
+                                    </linearGradient>
+                                    <!-- 水彩效果濾鏡 -->
+                                    <filter id="watercolor" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feTurbulence baseFrequency="0.04" numOctaves="3" result="noise"/>
+                                        <feDisplacementMap in="SourceGraphic" in2="noise" scale="2"/>
+                                        <feGaussianBlur stdDeviation="0.5"/>
+                                    </filter>
+                                </defs>
+                                <!-- 印章外圓 -->
+                                <circle cx="50" cy="50" r="35" fill="none" stroke="url(#certGradient)" stroke-width="3" filter="url(#watercolor)"/>
+                                <!-- 內圓 -->
+                                <circle cx="50" cy="50" r="25" fill="none" stroke="url(#certGradient)" stroke-width="2" opacity="0.8"/>
+                                <!-- 中心花紋 - 蓮花圖案 -->
+                                <g transform="translate(50,50)" stroke="url(#certGradient)" fill="none" stroke-width="1.5" opacity="0.9">
+                                    <path d="M0,-12 Q-6,-6 0,0 Q6,-6 0,-12" />
+                                    <path d="M8.5,-8.5 Q6,0 0,0 Q8.5,6 8.5,-8.5" />
+                                    <path d="M12,0 Q6,6 0,0 Q6,-6 12,0" />
+                                    <path d="M8.5,8.5 Q0,6 0,0 Q6,8.5 8.5,8.5" />
+                                    <path d="M0,12 Q6,6 0,0 Q-6,6 0,12" />
+                                    <path d="M-8.5,8.5 Q-6,0 0,0 Q-8.5,-6 -8.5,8.5" />
+                                    <path d="M-12,0 Q-6,-6 0,0 Q-6,6 -12,0" />
+                                    <path d="M-8.5,-8.5 Q0,-6 0,0 Q-6,-8.5 -8.5,-8.5" />
+                                </g>
+                                <!-- 認證文字線條 -->
+                                <path d="M20 75 L30 75 M35 75 L45 75 M55 75 L65 75 M70 75 L80 75" 
+                                      stroke="url(#certGradient)" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+                                <path d="M25 82 L35 82 M40 82 L50 82 M55 82 L65 82 M70 82 L75 82" 
+                                      stroke="url(#certGradient)" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+                            </svg>
+                        </div>
+                        <h3>認證機制</h3>
+                        <p>我們的核心使命是建立「認證」機制——每一項佛學內容都經過資深法友、學者和專家的嚴格審核，確保其準確性和權威性，為AI時代的佛法傳承奠定堅實基礎。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 計劃項目 -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">計劃項目</h2>
+                <p class="section-subtitle">三大整合性項目，共同構建完整的佛法數位生態系統</p>
+                
+                <div class="project-flow">
+                    <div class="flow-item">
+                        <h3>開放佛學知識計劃</h3>
+                        <p>建立認證佛學知識庫</p>
+                    </div>
+                    <div class="flow-item">
+                        <h3>佛典研讀平台</h3>
+                        <p>深度佛學研究工具</p>
+                    </div>
+                    <div class="flow-item">
+                        <h3>佛典修學應用</h3>
+                        <p>日常修行輔助工具</p>
+                    </div>
+                </div>
+
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('knowledge')">知識庫建設</button>
+                    <button class="tab" onclick="showTab('study')">研讀平台</button>
+                    <button class="tab" onclick="showTab('practice')">修學應用</button>
+                </div>
+
+                <div id="knowledge" class="tab-content active">
+                    <div class="card">
+                        <h3>開放佛學知識計劃</h3>
+                        <h4>建立新時代的《大藏經》數位典藏</h4>
+                        <p><strong>解決的問題：</strong>佛學資訊散落各處，缺乏統一的高品質知識庫</p>
+                        <p><strong>我們的解決方案：</strong>建立經過嚴格認證的開放式佛學知識庫，包含經典原文、現代註解、多語言翻譯和相關研究資料</p>
+                        <p><strong>核心特色：</strong></p>
+                        <ul>
+                            <li>多位法師和學者共同審核的認證機制</li>
+                            <li>結構化數據，便於AI理解和人工查詢</li>
+                            <li>開放授權，促進佛法普及</li>
+                            <li>持續更新，反映最新研究成果</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="study" class="tab-content">
+                    <div class="card">
+                        <h3>佛典研讀平台</h3>
+                        <h4>為法友打造的專業佛學研究工具</h4>
+                        <p><strong>解決的問題：</strong>缺乏整合性的數位佛學研究環境</p>
+                        <p><strong>我們的解決方案：</strong>建立功能完整的線上佛典研讀平台，支援深度佛學研究和學習</p>
+                        <p><strong>核心特色：</strong></p>
+                        <ul>
+                            <li>經典對照閱讀和註解查詢</li>
+                            <li>智能搜索和主題分類</li>
+                            <li>個人筆記和共修討論功能</li>
+                            <li>多媒體教學資源整合</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="practice" class="tab-content">
+                    <div class="card">
+                        <h3>佛典修學應用</h3>
+                        <h4>融入日常生活的修行輔助工具</h4>
+                        <p><strong>解決的問題：</strong>佛法理論與日常修行實踐的脫節</p>
+                        <p><strong>我們的解決方案：</strong>開發便民的佛法修學應用程式，幫助法友將佛法智慧融入日常生活</p>
+                        <p><strong>核心特色：</strong></p>
+                        <ul>
+                            <li>每日法語和經典選讀</li>
+                            <li>個人化修行進度追蹤</li>
+                            <li>禪修和念佛輔助功能</li>
+                            <li>法友交流和共修平台</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 護持參與 -->
+        <section id="involvement">
+            <div class="container">
+                <h2 class="section-title">護持參與</h2>
+                <p class="section-subtitle">誠邀各界法友共同參與這項護持佛法的偉大事業</p>
+
+                <div class="tabs">
+                    <button class="tab active" onclick="showTab('collaborate')">專業協作</button>
+                    <button class="tab" onclick="showTab('sponsor')">護持贊助</button>
+                </div>
+
+                <div id="collaborate" class="tab-content active">
+                    <div class="card">
+                        <h3>誠邀專業法友加入</h3>
+                        <p>我們需要具備以下專長的法友共同參與：</p>
+                        <div class="grid">
+                            <div>
+                                <h4>🔸 佛學研究</h4>
+                                <p>具有深厚佛學素養的法師、學者和資深修行者，協助內容審核和教理指導</p>
+                            </div>
+                            <div>
+                                <h4>🔸 資訊技術</h4>
+                                <p>軟體開發、數據庫設計、AI技術等專業人士，協助平台技術開發</p>
+                            </div>
+                            <div>
+                                <h4>🔸 翻譯編輯</h4>
+                                <p>多語言翻譯和文字編輯專家，協助佛典現代化和國際化</p>
+                            </div>
+                            <div>
+                                <h4>🔸 專案管理</h4>
+                                <p>具有NGO管理經驗的專業人士，協助計劃執行和資源調配</p>
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="mailto:contact@indrajala.org" class="btn btn-primary">聯繫我們</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sponsor" class="tab-content">
+                    <div class="card">
+                        <h3>護持贊助</h3>
+                        <p>您的護持將直接用於以下重要工作：</p>
+                        <div class="grid">
+                            <div>
+                                <h4>📚 典籍數位化</h4>
+                                <p>古籍掃描、OCR識別、校對和結構化處理</p>
+                            </div>
+                            <div>
+                                <h4>💻 技術開發</h4>
+                                <p>平台開發、伺服器維護和技術升級</p>
+                            </div>
+                            <div>
+                                <h4>👥 人力資源</h4>
+                                <p>專職研究員、技術人員和志工培訓</p>
+                            </div>
+                            <div>
+                                <h4>🌍 推廣弘法</h4>
+                                <p>多語言翻譯、國際交流和教育推廣</p>
+                            </div>
+                        </div>
+                        <div style="text-align: center; margin-top: 2rem;">
+                            <a href="mailto:donation@indrajala.org" class="btn btn-primary">護持贊助</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 關於我們 -->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">關於我們</h2>
+                
+                <div class="card" style="margin-bottom: 3rem;">
+                    <h3>我們的願景</h3>
+                    <p>「因陀羅網」來自《華嚴經》中的重要概念，象徵著宇宙中一切事物的相互連結和無限反映。正如因陀羅網上的每一顆寶珠都映照著其他所有寶珠，我們相信佛法的智慧應該能夠在數位時代中相互連結、相互輝映，讓每一位求法者都能從中受益。</p>
+                    <p>我們是一群關心佛法未來傳承的法友，深感在AI快速發展的時代，必須主動出擊，確保佛法的正確傳承和普及。透過結合傳統佛學智慧與現代科技，我們致力於創造一個值得信賴的佛法學習環境。</p>
+                </div>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>10+</h3>
+                        <p>位資深法友和學者</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>3</h3>
+                        <p>年籌備期間</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>∞</h3>
+                        <p>無限的護持願心</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>因陀羅華基金會為在台灣正式註冊的非營利組織</h3>
+                    <p style="text-align: center; font-size: 1.1rem; font-weight: 600;">
+                        因陀羅網基金會為在台灣正式註冊的非營利組織
+                    </p>
+                    <p style="text-align: center; margin-top: 1rem;">
+                        我們承諾所有資金將完全用於佛法弘揚和知識保存事業，
+                        定期公開財務報告，接受各界監督。
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 因陀羅華基金會 Indrajala Foundation. 護持佛法，傳承智慧。</p>
+            <p>聯繫信箱：contact@indrajala.org | 護持信箱：donation@indrajala.org</p>
+        </div>
+    </footer>
+
     <script>
-        window.location.href = 'website.html';
+        function showTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Enhanced scroll effects
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(253, 251, 248, 0.98)';
+                header.style.transform = 'translateY(0)';
+            } else {
+                header.style.background = 'rgba(253, 251, 248, 0.95)';
+            }
+        });
+
+        // Scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    
+                    // Stagger animations for cards within the same section
+                    if (entry.target.classList.contains('card')) {
+                        const cards = entry.target.parentElement.querySelectorAll('.card');
+                        cards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.classList.add('animate');
+                            }, index * 150);
+                        });
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections and cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const elementsToAnimate = document.querySelectorAll('section, .card');
+            elementsToAnimate.forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+        // Enhanced button interactions
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.transform = 'perspective(1000px) rotateY(-5deg) translateY(-5px)';
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.transform = 'perspective(1000px) rotateY(0deg) translateY(0)';
+            });
+            
+            button.addEventListener('mousedown', function() {
+                this.style.transform = 'perspective(1000px) rotateY(-3deg) translateY(-2px) scale(0.98)';
+            });
+            
+            button.addEventListener('mouseup', function() {
+                this.style.transform = 'perspective(1000px) rotateY(-5deg) translateY(-5px) scale(1)';
+            });
+        });
+
+        // Parallax effect for hero video
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const heroVideo = document.querySelector('.hero-video');
+            if (heroVideo) {
+                const rate = scrolled * -0.5;
+                heroVideo.style.transform = `translate(-50%, calc(-50% + ${rate}px))`;
+            }
+        });
+
+        // Logo hover animation enhancement
+        const logo = document.querySelector('.logo');
+        if (logo) {
+            logo.addEventListener('mouseenter', function() {
+                this.querySelector('.logo-image').style.transform = 'scale(1.1) rotate(5deg)';
+                this.querySelector('.logo-text').style.transform = 'translateX(5px)';
+            });
+            
+            logo.addEventListener('mouseleave', function() {
+                this.querySelector('.logo-image').style.transform = 'scale(1) rotate(0deg)';
+                this.querySelector('.logo-text').style.transform = 'translateX(0)';
+            });
+        }
     </script>
 </body>
 </html>
