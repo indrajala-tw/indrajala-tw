@@ -51,24 +51,38 @@
         }
 
         .logo-image {
-            height: 55px;
+            height: 40px;
             width: auto;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            filter: brightness(1) saturate(1);
-            transform-origin: center;
+            margin-right: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #991B1B;
+            letter-spacing: 0.5px;
+            position: relative;
+        }
+
+        .logo-text::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #991B1B, #DC2626);
+            transition: width 0.3s ease;
         }
 
         .logo:hover .logo-image {
-            transform: scale(1.05);
-            opacity: 0.8;
+            transform: scale(1.1);
         }
 
-        .logo {
-            position: relative;
-            overflow: hidden;
+        .logo:hover .logo-text::after {
+            width: 100%;
         }
-
-
 
         .nav-links {
             display: flex;
@@ -92,13 +106,13 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #0054BC, #0066E6);
+            background: linear-gradient(90deg, #991B1B, #DC2626);
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
 
         .nav-links a:hover {
-            color: #0054BC;
+            color: #991B1B;
         }
 
         .nav-links a:hover::after {
@@ -117,7 +131,7 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, #FFFFFF 0%, #F1F5F9 50%, #E2E8F0 100%);
+            background: #FFFFFF;
             text-align: center;
             position: relative;
         }
@@ -176,29 +190,28 @@
 
 
         .btn-primary {
-            background: linear-gradient(135deg, #0054BC, #0066E6);
+            background: #991B1B;
             color: white;
-            box-shadow: 0 4px 15px rgba(0, 84, 188, 0.3);
+            box-shadow: 0 4px 15px rgba(153, 27, 27, 0.3);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            background: #003875;
-            box-shadow: 0 4px 12px rgba(0, 84, 188, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(153, 27, 27, 0.4);
         }
 
         .btn-secondary {
             background: transparent;
-            color: #0054BC;
-            border: 2px solid #0054BC;
-            box-shadow: 0 4px 15px rgba(0, 84, 188, 0.1);
+            color: #991B1B;
+            border: 2px solid #991B1B;
+            box-shadow: 0 4px 15px rgba(153, 27, 27, 0.1);
         }
 
         .btn-secondary:hover {
-            background: #0054BC;
+            background: #991B1B;
             color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 84, 188, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(153, 27, 27, 0.3);
         }
 
         .section-title {
@@ -219,7 +232,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: linear-gradient(90deg, #0054BC, #0066E6);
+            background: linear-gradient(90deg, #991B1B, #DC2626);
             border-radius: 2px;
         }
 
@@ -241,25 +254,21 @@
         }
 
         .card {
-            background: linear-gradient(145deg, #FFFFFF 0%, #F8FAFC 100%);
+            background: #FFFFFF;
             padding: 2.5rem;
             border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0, 84, 188, 0.08);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
             transition: all 0.4s ease;
-            border: 1px solid rgba(0, 84, 188, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             position: relative;
-            overflow: hidden;
         }
 
 
 
         .card:hover {
-            transform: translateY(-5px);
-            border-color: #0054BC;
-            background: linear-gradient(145deg, #F8FAFC 0%, #FFFFFF 100%);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
-
-
 
 
 
@@ -277,11 +286,12 @@
 
         .card-icon svg {
             transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 8px rgba(153, 27, 27, 0.2));
         }
 
         .card:hover .card-icon svg {
-            transform: scale(1.05);
-            opacity: 0.8;
+            transform: scale(1.1);
+            filter: drop-shadow(0 4px 12px rgba(153, 27, 27, 0.3));
         }
 
         .card h3 {
@@ -323,7 +333,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, #0054BC, #0066E6);
+            background: linear-gradient(135deg, #991B1B, #DC2626);
             opacity: 0;
             border-radius: 25px;
             transition: opacity 0.3s ease;
@@ -340,7 +350,7 @@
         }
 
         .tab:hover {
-            color: #0054BC;
+            color: #991B1B;
         }
 
         .tab-content {
@@ -364,26 +374,25 @@
             background: rgba(255, 255, 255, 0.95);
             padding: 2rem;
             border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0, 84, 188, 0.1);
+            box-shadow: 0 6px 20px rgba(153, 27, 27, 0.1);
             text-align: center;
             min-width: 220px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0, 84, 188, 0.15);
+            border: 1px solid rgba(153, 27, 27, 0.15);
             position: relative;
         }
 
 
 
         .flow-item:hover {
-            transform: translateY(-3px);
-            border-color: #0054BC;
-            background: rgba(255, 255, 255, 1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(153, 27, 27, 0.2);
         }
 
         .flow-arrow {
             font-size: 2.5rem;
-            color: #0054BC;
-            text-shadow: 0 2px 4px rgba(0, 84, 188, 0.2);
+            color: #991B1B;
+            text-shadow: 0 2px 4px rgba(153, 27, 27, 0.2);
             animation: float 2s ease-in-out infinite;
         }
 
@@ -402,7 +411,7 @@
             align-items: center;
             justify-content: center;
             font-size: 3rem;
-            color: #0054BC;
+            color: #991B1B;
         }
 
         .stats {
@@ -414,7 +423,7 @@
 
         .stat-item h3 {
             font-size: 2.5rem;
-            color: #0054BC;
+            color: #991B1B;
             margin-bottom: 0.5rem;
         }
 
@@ -433,7 +442,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, #0054BC, transparent);
+            background: linear-gradient(90deg, transparent, #991B1B, transparent);
         }
 
         /* Buddhist Knowledge Workflow Styles */
@@ -457,19 +466,18 @@
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 249, 249, 0.95) 100%);
             border-radius: 15px;
             padding: 1.5rem;
-            box-shadow: 0 6px 20px rgba(0, 84, 188, 0.1);
+            box-shadow: 0 6px 20px rgba(153, 27, 27, 0.1);
             text-align: center;
             min-width: 280px;
             max-width: 350px;
             position: relative;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0, 84, 188, 0.15);
+            border: 1px solid rgba(153, 27, 27, 0.15);
         }
         
         .workflow-box:hover {
-            transform: translateY(-3px);
-            border-color: #0054BC;
-            background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(248, 250, 252, 1) 100%);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(153, 27, 27, 0.2);
         }
         
         .workflow-box-title {
@@ -487,23 +495,22 @@
         }
         
         .workflow-platform {
-            color: #0054BC;
+            color: #991B1B;
             font-weight: 700;
         }
         
         .workflow-arrow {
             font-size: 2rem;
-            color: #0054BC;
+            color: #991B1B;
             margin: 1rem 0;
-            text-shadow: 0 2px 4px rgba(0, 84, 188, 0.2);
+            text-shadow: 0 2px 4px rgba(153, 27, 27, 0.2);
         }
         
         .workflow-final-box {
-            background: linear-gradient(135deg, #0054BC 0%, #003875 100%);
+            background: linear-gradient(135deg, #991B1B 0%, #7F1D1D 100%);
             color: white;
             min-width: 400px;
             margin-top: 1rem;
-            box-shadow: 0 8px 25px rgba(0, 84, 188, 0.3);
         }
         
         .workflow-final-box .workflow-box-title {
@@ -530,7 +537,7 @@
             position: absolute;
             width: 150px;
             height: 2px;
-            background: #0054BC;
+            background: #991B1B;
         }
         
         .workflow-converging-arrows::before {
@@ -544,7 +551,7 @@
         }
         
         .workflow-converging-arrows .workflow-arrow {
-            background: #0054BC;
+            background: #991B1B;
             color: white;
             border-radius: 50%;
             width: 40px;
@@ -593,7 +600,8 @@
     <header>
         <nav class="container">
             <a href="#home" class="logo">
-                <img src="assets/Bluelogowithtext.png" alt="因陀羅華基金會" class="logo-image">
+                <img src="assets/Logo_0531_icon.png" alt="因陀羅華基金會" class="logo-image">
+                <span class="logo-text">因陀羅華</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#home">首頁</a></li>
@@ -632,8 +640,8 @@
                             <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="warningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#0054BC;stop-opacity:0.8" />
-                                        <stop offset="100%" style="stop-color:#0066E6;stop-opacity:0.6" />
+                                        <stop offset="0%" style="stop-color:#D97706;stop-opacity:0.8" />
+                                        <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:0.6" />
                                     </linearGradient>
                                 </defs>
                                 <!-- 三角形警告框 -->
@@ -655,9 +663,9 @@
                             <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="solutionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#0054BC;stop-opacity:0.8" />
-                                        <stop offset="50%" style="stop-color:#0066E6;stop-opacity:0.6" />
-                                        <stop offset="100%" style="stop-color:#4A90E2;stop-opacity:0.4" />
+                                        <stop offset="0%" style="stop-color:#D97706;stop-opacity:0.8" />
+                                        <stop offset="50%" style="stop-color:#F59E0B;stop-opacity:0.6" />
+                                        <stop offset="100%" style="stop-color:#FBB042;stop-opacity:0.4" />
                                     </linearGradient>
                                 </defs>
                                 <!-- 燈泡外框 -->
@@ -689,9 +697,9 @@
                             <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="certGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#0054BC;stop-opacity:0.9" />
-                                        <stop offset="50%" style="stop-color:#0066E6;stop-opacity:0.7" />
-                                        <stop offset="100%" style="stop-color:#4A90E2;stop-opacity:0.5" />
+                                        <stop offset="0%" style="stop-color:#D97706;stop-opacity:0.9" />
+                                        <stop offset="50%" style="stop-color:#F59E0B;stop-opacity:0.7" />
+                                        <stop offset="100%" style="stop-color:#FBB042;stop-opacity:0.5" />
                                     </linearGradient>
                                     <!-- 水彩效果濾鏡 -->
                                     <filter id="watercolor" x="-20%" y="-20%" width="140%" height="140%">
