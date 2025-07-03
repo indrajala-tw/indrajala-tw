@@ -51,37 +51,15 @@
         }
 
         .logo-image {
-            height: 40px;
+            height: 50px;
             width: auto;
-            margin-right: 12px;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-text {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #991B1B;
-            letter-spacing: 0.5px;
-            position: relative;
-        }
-
-        .logo-text::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #991B1B, #DC2626);
-            transition: width 0.3s ease;
+            transition: all 0.3s ease;
+            opacity: 1;
         }
 
         .logo:hover .logo-image {
-            transform: scale(1.1);
-        }
-
-        .logo:hover .logo-text::after {
-            width: 100%;
+            transform: scale(1.05);
+            opacity: 0.85;
         }
 
         .nav-links {
@@ -600,8 +578,7 @@
     <header>
         <nav class="container">
             <a href="#home" class="logo">
-                <img src="assets/Logo_0531_icon.png" alt="因陀羅華基金會" class="logo-image">
-                <span class="logo-text">因陀羅華</span>
+                <img src="assets/red with only chinese text.png" alt="因陀羅華基金會" class="logo-image">
             </a>
             <ul class="nav-links">
                 <li><a href="#home">首頁</a></li>
