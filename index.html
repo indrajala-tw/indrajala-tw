@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>因陀羅華基金會 - 護持佛法於AI時代</title>
+    <title>利用AI與佛法的力量
+讓眾生不再漂泊　</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
@@ -26,22 +27,21 @@
         }
 
         header {
-            background: rgba(253, 251, 248, 0.95);
-            backdrop-filter: blur(15px);
+            background: #FFFFFF;
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 100;
-            box-shadow: 0 2px 30px rgba(153, 27, 27, 0.1);
-            border-bottom: 1px solid rgba(153, 27, 27, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
         }
 
         .logo {
@@ -121,7 +121,7 @@
         }
 
         main {
-            margin-top: 80px;
+            margin-top: 100px;
         }
 
         section {
@@ -132,33 +132,14 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, #FDFBF8 0%, #F9F7F4 50%, #F5F3F0 100%);
+            background: #FFFFFF;
             text-align: center;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="lotus" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse"><g transform="translate(60,60)"><path d="M0,-20 Q-10,-10 -15,0 Q-10,10 0,20 Q10,10 15,0 Q10,-10 0,-20Z" fill="%23991B1B" opacity="0.08"/><circle cx="0" cy="0" r="2" fill="%23DC2626" opacity="0.3"/></g></pattern></defs><rect width="100%" height="100%" fill="url(%23lotus)"/></svg>') center/cover;
-            opacity: 0.6;
-        }
 
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: 10%;
-            width: 80px;
-            height: 80px;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="55" text-anchor="middle" font-size="60" fill="%23991B1B" opacity="0.1">卍</text></svg>');
-            animation: float 6s ease-in-out infinite;
-        }
+
+
 
         .hero-content {
             position: relative;
@@ -168,13 +149,9 @@
         .hero h1 {
             font-size: 3.2rem;
             margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #991B1B, #DC2626, #EF4444);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #2D3748;
             font-weight: 300;
             letter-spacing: 1px;
-            text-shadow: 0 4px 8px rgba(153, 27, 27, 0.1);
         }
 
         .hero p {
@@ -209,26 +186,12 @@
             letter-spacing: 0.5px;
         }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: all 0.4s ease;
-        }
 
-        .btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
+
+
 
         .btn-primary {
-            background: linear-gradient(135deg, #991B1B, #DC2626);
+            background: #991B1B;
             color: white;
             box-shadow: 0 4px 15px rgba(153, 27, 27, 0.3);
         }
@@ -246,7 +209,7 @@
         }
 
         .btn-secondary:hover {
-            background: linear-gradient(135deg, #991B1B, #DC2626);
+            background: #991B1B;
             color: white;
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(153, 27, 27, 0.3);
@@ -292,47 +255,27 @@
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.9);
+            background: #FFFFFF;
             padding: 2.5rem;
             border-radius: 20px;
             box-shadow: 0 8px 30px rgba(0,0,0,0.08);
             transition: all 0.4s ease;
-            border: 1px solid rgba(153, 27, 27, 0.1);
-            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             position: relative;
-            overflow: hidden;
         }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #991B1B, #DC2626);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
+
 
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(153, 27, 27, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
 
-        .card:hover::before {
-            opacity: 1;
-        }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.1; }
-            50% { transform: translateY(-20px) rotate(180deg); opacity: 0.2; }
-        }
 
-        @keyframes lotus-glow {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 0.6; }
-        }
+
+
+
 
         .card-icon {
             margin-bottom: 1.5rem;
@@ -360,23 +303,9 @@
             position: relative;
         }
 
-        .card h3::before {
-            content: '';
-            position: absolute;
-            left: -1rem;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 4px;
-            height: 20px;
-            background: linear-gradient(180deg, #991B1B, #DC2626);
-            border-radius: 2px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
 
-        .card:hover h3::before {
-            opacity: 1;
-        }
+
+
 
         .tabs {
             display: flex;
@@ -454,15 +383,7 @@
             position: relative;
         }
 
-        .flow-item::before {
-            content: '⚪';
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1.2rem;
-            color: #991B1B;
-        }
+
 
         .flow-item:hover {
             transform: translateY(-5px);
@@ -548,22 +469,7 @@
     <header>
         <nav class="container">
             <a href="#home" class="logo">
-                <svg class="logo-image" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="45" fill="#C53030"/>
-                    <g stroke="white" stroke-width="1.5" fill="none">
-                        <circle cx="50" cy="50" r="35"/>
-                        <circle cx="50" cy="50" r="25"/>
-                        <circle cx="50" cy="50" r="15"/>
-                        <circle cx="50" cy="15" r="15"/>
-                        <circle cx="50" cy="85" r="15"/>
-                        <circle cx="15" cy="50" r="15"/>
-                        <circle cx="85" cy="50" r="15"/>
-                        <circle cx="73" cy="27" r="15"/>
-                        <circle cx="27" cy="73" r="15"/>
-                        <circle cx="27" cy="27" r="15"/>
-                        <circle cx="73" cy="73" r="15"/>
-                    </g>
-                </svg>
+                <img src="assets/Logo_0531_icon.png" alt="因陀羅華基金會" class="logo-image">
                 <span class="logo-text">因陀羅華</span>
             </a>
             <ul class="nav-links">
@@ -711,12 +617,10 @@
                         <h3>開放佛學知識計劃</h3>
                         <p>建立認證佛學知識庫</p>
                     </div>
-                    <div class="flow-arrow">➡️</div>
                     <div class="flow-item">
                         <h3>佛典研讀平台</h3>
                         <p>深度佛學研究工具</p>
                     </div>
-                    <div class="flow-arrow">➡️</div>
                     <div class="flow-item">
                         <h3>佛典修學應用</h3>
                         <p>日常修行輔助工具</p>
