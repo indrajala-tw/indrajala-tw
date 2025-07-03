@@ -16,7 +16,7 @@
             font-family: 'Noto Serif TC', 'Microsoft YaHei', serif;
             line-height: 1.8;
             color: #2D3748;
-            background: #ffffff;
+            background: linear-gradient(135deg, #FDFBF8 0%, #F7F5F0 100%);
             background-attachment: fixed;
         }
 
@@ -62,7 +62,7 @@
         .logo-text {
             font-size: 1.6rem;
             font-weight: 700;
-            color: #ab1a1f;
+            color: #B7791F;
             letter-spacing: 0.5px;
             position: relative;
         }
@@ -74,7 +74,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #ab1a1f, #ab1a1f);
+            background: linear-gradient(90deg, #D97706, #F59E0B);
             transition: width 0.3s ease;
         }
 
@@ -108,13 +108,13 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background: linear-gradient(90deg, #ab1a1f, #ab1a1f);
+            background: linear-gradient(90deg, #D97706, #F59E0B);
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
 
         .nav-links a:hover {
-            color: #ab1a1f;
+            color: #B7791F;
         }
 
         .nav-links a:hover::after {
@@ -130,186 +130,84 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            opacity: 0;
-            transform: translateY(50px) scale(0.9);
-        }
-        
-        section.animate {
-            opacity: 1;
-            transform: translateY(0) scale(1);
         }
 
         .hero {
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, #FDFBF8 0%, #F8F6F0 50%, #F5F1E8 100%);
             text-align: center;
-            color: #ffffff;
-        }
-
-        .hero-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            opacity: 0.6;
-        }
-
-        /* Animated Dharma Wheel */
-        .dharma-wheel {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
-            z-index: 1;
-            opacity: 0.3;
-            pointer-events: none;
-        }
-
-        .wheel-container {
-            width: 100%;
-            height: 100%;
-            animation: rotate 30s linear infinite;
-        }
-
-        .wheel-svg {
-            width: 100%;
-            height: 100%;
-            filter: drop-shadow(0 0 20px rgba(217, 119, 6, 0.4));
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Floating particles animation */
-        .particles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: linear-gradient(45deg, #D97706, #F59E0B);
-            border-radius: 50%;
-            animation: float 8s infinite ease-in-out;
-            opacity: 0.6;
-        }
-
-        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 6s; }
-        .particle:nth-child(2) { left: 20%; animation-delay: 1s; animation-duration: 8s; }
-        .particle:nth-child(3) { left: 30%; animation-delay: 2s; animation-duration: 7s; }
-        .particle:nth-child(4) { left: 40%; animation-delay: 0.5s; animation-duration: 9s; }
-        .particle:nth-child(5) { left: 50%; animation-delay: 1.5s; animation-duration: 6s; }
-        .particle:nth-child(6) { left: 60%; animation-delay: 2.5s; animation-duration: 8s; }
-        .particle:nth-child(7) { left: 70%; animation-delay: 3s; animation-duration: 7s; }
-        .particle:nth-child(8) { left: 80%; animation-delay: 0.8s; animation-duration: 9s; }
-        .particle:nth-child(9) { left: 90%; animation-delay: 2.2s; animation-duration: 6s; }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(100vh) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-                transform: translateY(90vh) scale(1);
-            }
-            90% {
-                opacity: 0.6;
-                transform: translateY(-10vh) scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-20vh) scale(0);
-            }
-        }
-
-        .hero h1 {
-            font-size: 3.8rem;
-            margin-bottom: 1.5rem;
-            color: #ffffff;
-            font-weight: 300;
-            letter-spacing: 2px;
-            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            animation: fadeInUp 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
             overflow: hidden;
         }
-        
-        .hero h1::after {
+
+        .hero::before {
             content: '';
             position: absolute;
             top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.3), 
-                transparent
-            );
-            animation: shimmer 3s ease-in-out 2s infinite;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="lotus" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse"><g transform="translate(60,60)"><path d="M0,-20 Q-10,-10 -15,0 Q-10,10 0,20 Q10,10 15,0 Q10,-10 0,-20Z" fill="%23D97706" opacity="0.08"/><circle cx="0" cy="0" r="2" fill="%23B7791F" opacity="0.3"/></g></pattern></defs><rect width="100%" height="100%" fill="url(%23lotus)"/></svg>') center/cover;
+            opacity: 0.6;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text x="50" y="55" text-anchor="middle" font-size="60" fill="%23D97706" opacity="0.1">卍</text></svg>');
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #B7791F, #D97706, #F59E0B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 300;
+            letter-spacing: 1px;
+            text-shadow: 0 4px 8px rgba(217, 119, 6, 0.1);
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             margin-bottom: 2.5rem;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            color: rgba(255, 255, 255, 0.95);
+            color: #4A5568;
             line-height: 1.8;
             font-weight: 300;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            animation: fadeInUp 1.2s ease-out 0.3s both;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 1.2s ease-out 0.6s both;
         }
 
         .btn {
-            padding: 1.2rem 2.8rem;
+            padding: 1rem 2.5rem;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 500;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: all 0.4s ease;
             border: none;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1rem;
             position: relative;
             overflow: hidden;
             letter-spacing: 0.5px;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            transform: perspective(1000px) rotateY(0deg);
-        }
-        
-        .btn:hover {
-            transform: perspective(1000px) rotateY(-5deg) translateY(-5px);
-            animation: pulse 2s ease-in-out infinite;
         }
 
         .btn::before {
@@ -331,30 +229,28 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, rgba(171, 26, 31, 0.9), rgba(171, 26, 31, 0.8));
+            background: linear-gradient(135deg, #D97706, #F59E0B);
             color: white;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.3);
         }
 
         .btn-primary:hover {
-            background: linear-gradient(135deg, rgba(171, 26, 31, 1), rgba(171, 26, 31, 0.9));
             transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(171, 26, 31, 0.4);
-            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.4);
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: transparent;
+            color: #D97706;
+            border: 2px solid #D97706;
+            box-shadow: 0 4px 15px rgba(217, 119, 6, 0.1);
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.25);
-            color: #ffffff;
+            background: linear-gradient(135deg, #D97706, #F59E0B);
+            color: white;
             transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
-            border-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 25px rgba(217, 119, 6, 0.3);
         }
 
         .section-title {
@@ -375,7 +271,7 @@
             transform: translateX(-50%);
             width: 60px;
             height: 3px;
-            background: linear-gradient(90deg, #ab1a1f, #ab1a1f);
+            background: linear-gradient(90deg, #D97706, #F59E0B);
             border-radius: 2px;
         }
 
@@ -397,42 +293,15 @@
         }
 
         .card {
-            background: white;
+            background: rgba(255, 255, 255, 0.9);
             padding: 2.5rem;
             border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(171, 26, 31, 0.1);
-            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 1px solid rgba(171, 26, 31, 0.05);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(217, 119, 6, 0.1);
+            backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
-            opacity: 0;
-            transform: translateY(50px) scale(0.9);
-        }
-        
-        .card.animate {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-
-        .card-icon {
-            margin-bottom: 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 80px;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .card:hover {
-            transform: translateY(-15px) scale(1.03) rotateY(5deg);
-            box-shadow: 0 25px 80px rgba(171, 26, 31, 0.2);
-            border-color: rgba(171, 26, 31, 0.15);
-        }
-        
-        .card:hover .card-icon {
-            transform: scale(1.1) rotate(10deg);
-            animation: float 2s ease-in-out infinite;
         }
 
         .card::before {
@@ -442,14 +311,14 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #ab1a1f, #ab1a1f);
+            background: linear-gradient(90deg, #D97706, #F59E0B);
             opacity: 0;
             transition: opacity 0.3s ease;
         }
 
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(171, 26, 31, 0.15);
+            box-shadow: 0 15px 40px rgba(217, 119, 6, 0.15);
         }
 
         .card:hover::before {
@@ -467,11 +336,21 @@
         }
 
         .card-icon {
-            font-size: 3.5rem;
-            color: #ab1a1f;
             margin-bottom: 1.5rem;
-            text-shadow: 0 2px 8px rgba(171, 26, 31, 0.2);
-            animation: lotus-glow 3s ease-in-out infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80px;
+        }
+
+        .card-icon svg {
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 2px 8px rgba(217, 119, 6, 0.2));
+        }
+
+        .card:hover .card-icon svg {
+            transform: scale(1.1);
+            filter: drop-shadow(0 4px 12px rgba(217, 119, 6, 0.3));
         }
 
         .card h3 {
@@ -490,7 +369,7 @@
             transform: translateY(-50%);
             width: 4px;
             height: 20px;
-            background: linear-gradient(180deg, #ab1a1f, #ab1a1f);
+            background: linear-gradient(180deg, #D97706, #F59E0B);
             border-radius: 2px;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -527,7 +406,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, #ab1a1f, #ab1a1f);
+            background: linear-gradient(135deg, #D97706, #F59E0B);
             opacity: 0;
             border-radius: 25px;
             transition: opacity 0.3s ease;
@@ -544,19 +423,7 @@
         }
 
         .tab:hover {
-            color: #ab1a1f;
-        }
-
-        .tab.active:hover {
-            color: white;
-        }
-
-        .tab:hover::before {
-            opacity: 0.1;
-        }
-
-        .tab.active:hover::before {
-            opacity: 1;
+            color: #D97706;
         }
 
         .tab-content {
@@ -569,8 +436,8 @@
 
         .project-flow {
             display: flex;
-            align-items: stretch;
-            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
             flex-wrap: wrap;
             gap: 2rem;
             margin: 3rem 0;
@@ -582,14 +449,21 @@
             border-radius: 15px;
             box-shadow: 0 6px 20px rgba(217, 119, 6, 0.1);
             text-align: center;
-            flex: 1;
-            min-width: 280px;
+            min-width: 220px;
             transition: all 0.3s ease;
             border: 1px solid rgba(217, 119, 6, 0.15);
             position: relative;
         }
 
-
+        .flow-item::before {
+            content: '⚪';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.2rem;
+            color: #D97706;
+        }
 
         .flow-item:hover {
             transform: translateY(-5px);
@@ -598,8 +472,8 @@
 
         .flow-arrow {
             font-size: 2.5rem;
-            color: #ab1a1f;
-            text-shadow: 0 2px 4px rgba(171, 26, 31, 0.2);
+            color: #D97706;
+            text-shadow: 0 2px 4px rgba(217, 119, 6, 0.2);
             animation: float 2s ease-in-out infinite;
         }
 
@@ -618,7 +492,7 @@
             align-items: center;
             justify-content: center;
             font-size: 3rem;
-            color: #ab1a1f;
+            color: #D97706;
         }
 
         .stats {
@@ -630,7 +504,7 @@
 
         .stat-item h3 {
             font-size: 2.5rem;
-            color: #ab1a1f;
+            color: #D97706;
             margin-bottom: 0.5rem;
         }
 
@@ -649,150 +523,12 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, #ab1a1f, transparent);
+            background: linear-gradient(90deg, transparent, #D97706, transparent);
         }
 
-        /* Enhanced Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(60px) scale(0.95);
-                filter: blur(5px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-                filter: blur(0);
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(100px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-            25% {
-                transform: translateY(-8px) rotate(1deg);
-            }
-            50% {
-                transform: translateY(-15px) rotate(0deg);
-            }
-            75% {
-                transform: translateY(-8px) rotate(-1deg);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            }
-            50% {
-                transform: scale(1.05);
-                box-shadow: 0 12px 40px rgba(171, 26, 31, 0.3);
-            }
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: -200% center;
-            }
-            100% {
-                background-position: 200% center;
-            }
-        }
-
-        @keyframes videoZoom {
-            0% {
-                transform: translate(-50%, -50%) scale(1);
-            }
-            100% {
-                transform: translate(-50%, -50%) scale(1.1);
-            }
-        }
-
-        @keyframes gradientShift {
-            0%, 100% {
-                background: linear-gradient(
-                    135deg,
-                    rgba(171, 26, 31, 0.7) 0%,
-                    rgba(171, 26, 31, 0.5) 25%,
-                    rgba(0, 0, 0, 0.3) 50%,
-                    rgba(171, 26, 31, 0.5) 75%,
-                    rgba(171, 26, 31, 0.7) 100%
-                );
-            }
-            50% {
-                background: linear-gradient(
-                    135deg,
-                    rgba(171, 26, 31, 0.8) 0%,
-                    rgba(171, 26, 31, 0.6) 25%,
-                    rgba(0, 0, 0, 0.4) 50%,
-                    rgba(171, 26, 31, 0.6) 75%,
-                    rgba(171, 26, 31, 0.8) 100%
-                );
-            }
-        }
-
-        /* Mobile Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
-                letter-spacing: 1px;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-                padding: 0 1rem;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
-            
-            .btn {
-                padding: 1rem 2rem;
-                font-size: 1rem;
-                width: 280px;
-                text-align: center;
-            }
-            
-            .hero-video {
-                object-position: center;
+                font-size: 2rem;
             }
             
             .nav-links {
@@ -807,24 +543,29 @@
                 transform: rotate(90deg);
             }
         }
-        
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-        }
     </style>
 </head>
 <body>
     <header>
         <nav class="container">
             <a href="#home" class="logo">
-                <img class="logo-image" src="assets/Injrajala Logo_0531_LOGO.png" alt="因陀羅華基金會 Logo" />
-
+                <svg class="logo-image" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="#C53030"/>
+                    <g stroke="white" stroke-width="1.5" fill="none">
+                        <circle cx="50" cy="50" r="35"/>
+                        <circle cx="50" cy="50" r="25"/>
+                        <circle cx="50" cy="50" r="15"/>
+                        <circle cx="50" cy="15" r="15"/>
+                        <circle cx="50" cy="85" r="15"/>
+                        <circle cx="15" cy="50" r="15"/>
+                        <circle cx="85" cy="50" r="15"/>
+                        <circle cx="73" cy="27" r="15"/>
+                        <circle cx="27" cy="73" r="15"/>
+                        <circle cx="27" cy="27" r="15"/>
+                        <circle cx="73" cy="73" r="15"/>
+                    </g>
+                </svg>
+                <span class="logo-text">因陀羅華</span>
             </a>
             <ul class="nav-links">
                 <li><a href="#home">首頁</a></li>
@@ -839,76 +580,6 @@
     <main>
         <!-- 首頁 -->
         <section id="home" class="hero">
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="assets/Injrajala wheel.mp4" type="video/mp4">
-                您的瀏覽器不支援影片播放。
-            </video>
-            
-            <!-- Animated Dharma Wheel -->
-            <div class="dharma-wheel">
-                <div class="wheel-container">
-                    <svg class="wheel-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="wheelGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#D97706;stop-opacity:0.8" />
-                                <stop offset="50%" style="stop-color:#F59E0B;stop-opacity:0.9" />
-                                <stop offset="100%" style="stop-color:#D97706;stop-opacity:0.8" />
-                            </linearGradient>
-                            <linearGradient id="rimGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#92400E;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#D97706;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        
-                        <!-- Outer rim -->
-                        <circle cx="100" cy="100" r="95" fill="none" stroke="url(#rimGradient)" stroke-width="4" opacity="0.8"/>
-                        
-                        <!-- Eight spokes of the dharma wheel -->
-                        <g stroke="url(#wheelGradient)" stroke-width="3" opacity="0.9">
-                            <line x1="100" y1="20" x2="100" y2="180" />
-                            <line x1="180" y1="100" x2="20" y2="100" />
-                            <line x1="160" y1="40" x2="40" y2="160" />
-                            <line x1="160" y1="160" x2="40" y2="40" />
-                        </g>
-                        
-                        <!-- Inner decorative circles -->
-                        <circle cx="100" cy="100" r="60" fill="none" stroke="url(#wheelGradient)" stroke-width="2" opacity="0.6"/>
-                        <circle cx="100" cy="100" r="35" fill="none" stroke="url(#wheelGradient)" stroke-width="2" opacity="0.7"/>
-                        
-                        <!-- Center hub -->
-                        <circle cx="100" cy="100" r="15" fill="url(#wheelGradient)" opacity="0.8"/>
-                        
-                        <!-- Decorative dots around the rim -->
-                        <g fill="url(#wheelGradient)" opacity="0.7">
-                            <circle cx="100" cy="15" r="3"/>
-                            <circle cx="141" cy="29" r="3"/>
-                            <circle cx="171" cy="59" r="3"/>
-                            <circle cx="185" cy="100" r="3"/>
-                            <circle cx="171" cy="141" r="3"/>
-                            <circle cx="141" cy="171" r="3"/>
-                            <circle cx="100" cy="185" r="3"/>
-                            <circle cx="59" cy="171" r="3"/>
-                            <circle cx="29" cy="141" r="3"/>
-                            <circle cx="15" cy="100" r="3"/>
-                            <circle cx="29" cy="59" r="3"/>
-                            <circle cx="59" cy="29" r="3"/>
-                        </g>
-                    </svg>
-                </div>
-            </div>
-            
-            <!-- Floating particles -->
-            <div class="particles">
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-                <div class="particle"></div>
-            </div>
             <div class="container">
                 <div class="hero-content">
                     <h1>護持古老智慧於AI新時代</h1>
@@ -925,17 +596,16 @@
         <section id="mission">
             <div class="container">
                 <h2 class="section-title">我們的使命</h2>
-                <p class="section-subtitle">在資訊爆炸的時代，佛法的傳承面臨前所未有的挑戰與機遇</p>
+                <p class="section-subtitle">在資訊爆炸的時代，佛法傳承面臨前所未有的挑戰與機遇</p>
                 
                 <div class="grid">
                     <div class="card">
                         <div class="card-icon">
-
                             <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="warningGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#ab1a1f;stop-opacity:0.8" />
-                                        <stop offset="100%" style="stop-color:#ab1a1f;stop-opacity:0.6" />
+                                        <stop offset="0%" style="stop-color:#D97706;stop-opacity:0.8" />
+                                        <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:0.6" />
                                     </linearGradient>
                                 </defs>
                                 <!-- 三角形警告框 -->
@@ -949,8 +619,7 @@
                             </svg>
                         </div>
                         <h3>當前挑戰</h3>
-                        <p>網路上的佛學資訊品質參差不齊，AI訓練時可能學習到錯誤或偏頗的佛法詮釋，導致希望學習佛法的人無法正確理
-                            解佛法。缺乏系統性的佛學知識整理，使得珍貴的佛法智慧難以有效傳播。</p>
+                        <p>網路上的佛學資訊品質參差不齊，AI訓練時可能學習到錯誤或偏頗的佛法詮釋，導致佛法傳承出現偏差。缺乏系統性的佛學知識整理，使得珍貴的佛法智慧難以有效傳播。</p>
                     </div>
                     
                     <div class="card">
@@ -958,9 +627,9 @@
                             <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
                                     <linearGradient id="solutionGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#ab1a1f;stop-opacity:0.8" />
-                                        <stop offset="50%" style="stop-color:#ab1a1f;stop-opacity:0.6" />
-                                        <stop offset="100%" style="stop-color:#ab1a1f;stop-opacity:0.4" />
+                                        <stop offset="0%" style="stop-color:#D97706;stop-opacity:0.8" />
+                                        <stop offset="50%" style="stop-color:#F59E0B;stop-opacity:0.6" />
+                                        <stop offset="100%" style="stop-color:#FBB042;stop-opacity:0.4" />
                                     </linearGradient>
                                 </defs>
                                 <!-- 燈泡外框 -->
@@ -1043,10 +712,12 @@
                         <h3>開放佛學知識計劃</h3>
                         <p>建立認證佛學知識庫</p>
                     </div>
+                    <div class="flow-arrow">➡️</div>
                     <div class="flow-item">
                         <h3>佛典研讀平台</h3>
                         <p>深度佛學研究工具</p>
                     </div>
+                    <div class="flow-arrow">➡️</div>
                     <div class="flow-item">
                         <h3>佛典修學應用</h3>
                         <p>日常修行輔助工具</p>
@@ -1256,91 +927,15 @@
             });
         });
 
-        // Enhanced scroll effects
+        // Add scroll effect to header
         window.addEventListener('scroll', function() {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
                 header.style.background = 'rgba(253, 251, 248, 0.98)';
-                header.style.transform = 'translateY(0)';
             } else {
                 header.style.background = 'rgba(253, 251, 248, 0.95)';
             }
         });
-
-        // Scroll-triggered animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                    
-                    // Stagger animations for cards within the same section
-                    if (entry.target.classList.contains('card')) {
-                        const cards = entry.target.parentElement.querySelectorAll('.card');
-                        cards.forEach((card, index) => {
-                            setTimeout(() => {
-                                card.classList.add('animate');
-                            }, index * 150);
-                        });
-                    }
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections and cards
-        document.addEventListener('DOMContentLoaded', function() {
-            const elementsToAnimate = document.querySelectorAll('section, .card');
-            elementsToAnimate.forEach(element => {
-                observer.observe(element);
-            });
-        });
-
-        // Enhanced button interactions
-        document.querySelectorAll('.btn').forEach(button => {
-            button.addEventListener('mouseenter', function() {
-                this.style.transform = 'perspective(1000px) rotateY(-5deg) translateY(-5px)';
-            });
-            
-            button.addEventListener('mouseleave', function() {
-                this.style.transform = 'perspective(1000px) rotateY(0deg) translateY(0)';
-            });
-            
-            button.addEventListener('mousedown', function() {
-                this.style.transform = 'perspective(1000px) rotateY(-3deg) translateY(-2px) scale(0.98)';
-            });
-            
-            button.addEventListener('mouseup', function() {
-                this.style.transform = 'perspective(1000px) rotateY(-5deg) translateY(-5px) scale(1)';
-            });
-        });
-
-        // Parallax effect for hero video
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const heroVideo = document.querySelector('.hero-video');
-            if (heroVideo) {
-                const rate = scrolled * -0.5;
-                heroVideo.style.transform = `translate(-50%, calc(-50% + ${rate}px))`;
-            }
-        });
-
-        // Logo hover animation enhancement
-        const logo = document.querySelector('.logo');
-        if (logo) {
-            logo.addEventListener('mouseenter', function() {
-                this.querySelector('.logo-image').style.transform = 'scale(1.1) rotate(5deg)';
-                this.querySelector('.logo-text').style.transform = 'translateX(5px)';
-            });
-            
-            logo.addEventListener('mouseleave', function() {
-                this.querySelector('.logo-image').style.transform = 'scale(1) rotate(0deg)';
-                this.querySelector('.logo-text').style.transform = 'translateX(0)';
-            });
-        }
     </script>
 </body>
 </html>
