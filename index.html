@@ -51,15 +51,36 @@
         }
 
         .logo-image {
-            height: 50px;
+            height: 55px;
             width: auto;
-            transition: all 0.3s ease;
-            filter: brightness(1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            filter: brightness(1) saturate(1);
+            transform-origin: center;
         }
 
         .logo:hover .logo-image {
-            transform: scale(1.1) rotate(2deg);
-            filter: brightness(1.1) drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+            transform: scale(1.08) translateY(-2px);
+            filter: brightness(1.15) saturate(1.1) drop-shadow(0 6px 16px rgba(59, 130, 246, 0.3));
+        }
+
+        .logo {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .logo:hover::before {
+            left: 100%;
         }
 
         .nav-links {
@@ -578,7 +599,7 @@
     <header>
         <nav class="container">
             <a href="#home" class="logo">
-                <img src="assets/IndrajalaBlueLogo.png" alt="因陀羅華基金會" class="logo-image">
+                <img src="assets/Bluelogowithtext.png" alt="因陀羅華基金會" class="logo-image">
             </a>
             <ul class="nav-links">
                 <li><a href="#home">首頁</a></li>
