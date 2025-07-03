@@ -445,6 +445,124 @@
             background: linear-gradient(90deg, transparent, #991B1B, transparent);
         }
 
+        /* Buddhist Knowledge Workflow Styles */
+        .workflow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .workflow-row {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        
+        .workflow-box {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 249, 249, 0.95) 100%);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(153, 27, 27, 0.1);
+            text-align: center;
+            min-width: 280px;
+            max-width: 350px;
+            position: relative;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(153, 27, 27, 0.15);
+        }
+        
+        .workflow-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(153, 27, 27, 0.2);
+        }
+        
+        .workflow-box-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2D3748;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        
+        .workflow-box-description {
+            font-size: 0.9rem;
+            color: #4A5568;
+            line-height: 1.5;
+        }
+        
+        .workflow-platform {
+            color: #991B1B;
+            font-weight: 700;
+        }
+        
+        .workflow-arrow {
+            font-size: 2rem;
+            color: #991B1B;
+            margin: 1rem 0;
+            text-shadow: 0 2px 4px rgba(153, 27, 27, 0.2);
+        }
+        
+        .workflow-final-box {
+            background: linear-gradient(135deg, #991B1B 0%, #7F1D1D 100%);
+            color: white;
+            min-width: 400px;
+            margin-top: 1rem;
+        }
+        
+        .workflow-final-box .workflow-box-title {
+            color: white;
+            font-size: 1.4rem;
+        }
+        
+        .workflow-final-box .workflow-box-description {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+        }
+        
+        .workflow-converging-arrows {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+        
+        .workflow-converging-arrows::before,
+        .workflow-converging-arrows::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 2px;
+            background: #991B1B;
+        }
+        
+        .workflow-converging-arrows::before {
+            transform: rotate(15deg);
+            left: -75px;
+        }
+        
+        .workflow-converging-arrows::after {
+            transform: rotate(-15deg);
+            right: -75px;
+        }
+        
+        .workflow-converging-arrows .workflow-arrow {
+            background: #991B1B;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            font-size: 1.5rem;
+        }
+
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
@@ -460,6 +578,20 @@
             
             .flow-arrow {
                 transform: rotate(90deg);
+            }
+            
+            .workflow-row {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+            
+            .workflow-box {
+                min-width: 260px;
+            }
+            
+            .workflow-final-box {
+                min-width: 260px;
             }
         }
     </style>
@@ -677,6 +809,71 @@
                             <li>禪修和念佛輔助功能</li>
                             <li>法友交流和共修平台</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 社群主導的文本保存與知識創建 -->
+        <section id="workflow">
+            <div class="container">
+                <h2 class="section-title">社群主導的文本保存與知識創建</h2>
+                <p class="section-subtitle">透過開放協作的方式，建立完整的佛教知識生態系統</p>
+                
+                <div class="workflow">
+                    <div class="workflow-row">
+                        <div class="workflow-box">
+                            <div class="workflow-box-title">與<span class="workflow-platform">佛教數位資源中心</span>合作蒐集與數位化文本</div>
+                            <div class="workflow-box-description">(與寺院合作蒐集、數位化、編目和清理文本)</div>
+                        </div>
+                        
+                        <div class="workflow-box">
+                            <div class="workflow-box-title">在<span class="workflow-platform">維基文庫</span>上翻譯文本</div>
+                            <div class="workflow-box-description">(社群主導的主要語言文本翻譯)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-row">
+                        <div class="workflow-arrow">↓</div>
+                        <div class="workflow-arrow">↓</div>
+                    </div>
+                    
+                    <div class="workflow-row">
+                        <div class="workflow-box">
+                            <div class="workflow-box-title">在<span class="workflow-platform">維基數據</span>上建構後設資料</div>
+                            <div class="workflow-box-description">(識別並連結書目、版本、作者和主題)</div>
+                        </div>
+                        
+                        <div class="workflow-box">
+                            <div class="workflow-box-title">在<span class="workflow-platform">維基數據</span>上連結事實</div>
+                            <div class="workflow-box-description">(識別關鍵概念並在整個語料庫中建立連結)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-row">
+                        <div class="workflow-arrow">↓</div>
+                        <div class="workflow-arrow">↓</div>
+                    </div>
+                    
+                    <div class="workflow-row">
+                        <div class="workflow-box">
+                            <div class="workflow-box-title">在<span class="workflow-platform">維基文庫</span>上發佈校勘版本</div>
+                            <div class="workflow-box-description">(使用AI參考資源解決異體字拼寫問題)</div>
+                        </div>
+                        
+                        <div class="workflow-box">
+                            <div class="workflow-box-title">在<span class="workflow-platform">維基百科</span>上呈現知識</div>
+                            <div class="workflow-box-description">(使用來源內容系統性地創建和增強條目)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="workflow-converging-arrows">
+                        <div class="workflow-arrow">↓</div>
+                    </div>
+                    
+                    <div class="workflow-final-box workflow-box">
+                        <div class="workflow-box-title">為人類與AI提供權威的佛教知識</div>
+                        <div class="workflow-box-description">(為研究、教育和AI建立基礎性的開放協作資料集)</div>
                     </div>
                 </div>
             </div>
