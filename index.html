@@ -110,17 +110,33 @@
 
         .hero {
             background: #FFFFFF;
-            text-align: center;
             position: relative;
         }
 
-
-
-
+        .hero-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            min-height: 80vh;
+        }
 
         .hero-content {
+            flex: 1;
+            text-align: left;
             position: relative;
             z-index: 2;
+        }
+
+        .hero-video {
+            flex: 1;
+            position: relative;
+        }
+
+        .hero-video video {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
         .hero h1 {
@@ -134,9 +150,7 @@
         .hero p {
             font-size: 1.25rem;
             margin-bottom: 2.5rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 600px;
             color: #4A5568;
             line-height: 1.8;
             font-weight: 300;
@@ -145,7 +159,7 @@
         .cta-buttons {
             display: flex;
             gap: 1rem;
-            justify-content: center;
+            justify-content: flex-start;
             flex-wrap: wrap;
         }
 
@@ -542,6 +556,20 @@
         }
 
         @media (max-width: 768px) {
+            .hero-container {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+            
+            .cta-buttons {
+                justify-content: center;
+            }
+            
             .hero h1 {
                 font-size: 2rem;
             }
@@ -594,12 +622,20 @@
         <!-- 首頁 -->
         <section id="home" class="hero">
             <div class="container">
-                <div class="hero-content">
-                    <h1>乘著AI的風 讓正法弘揚</h1>
-                    <p>在人工智慧蓬勃發展的時代，我們致力於建構可信賴的佛學知識庫，讓佛法智慧能夠正確傳承並普及於世界各地，同時確保AI技術能夠準確理解和傳達佛教教義。</p>
-                    <div class="cta-buttons">
-                        <a href="#projects" class="btn btn-primary">瞭解計劃項目</a>
-                        <a href="#involvement" class="btn btn-secondary">護持參與</a>
+                <div class="hero-container">
+                    <div class="hero-content">
+                        <h1>乘著AI的風 讓正法弘揚</h1>
+                        <p>在人工智慧蓬勃發展的時代，我們致力於建構可信賴的佛學知識庫，讓佛法智慧能夠正確傳承並普及於世界各地，同時確保AI技術能夠準確理解和傳達佛教教義。</p>
+                        <div class="cta-buttons">
+                            <a href="#projects" class="btn btn-primary">瞭解計劃項目</a>
+                            <a href="#involvement" class="btn btn-secondary">護持參與</a>
+                        </div>
+                    </div>
+                    <div class="hero-video">
+                        <video autoplay muted loop playsinline>
+                            <source src="assets/flyingcrane.mp4" type="video/mp4">
+                            您的瀏覽器不支援影片播放。
+                        </video>
                     </div>
                 </div>
             </div>
