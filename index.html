@@ -899,8 +899,8 @@
                 <p class="section-subtitle">誠邀所有關心佛教未來的朋友們，一同與我們共同將佛法帶給未來的世代</p>
 
                 <div class="tabs">
-                    <button class="tab active" onclick="showTab('collaborate')">專業協作</button>
-                    <button class="tab" onclick="showTab('sponsor')">護持贊助</button>
+                    <button class="tab active" onclick="showTab('collaborate', this)">專業協作</button>
+                    <button class="tab" onclick="showTab('sponsor', this)">護持贊助</button>
                 </div>
 
                 <div id="collaborate" class="tab-content active">
@@ -1009,7 +1009,7 @@
     </footer>
 
     <script>
-        function showTab(tabName) {
+        function showTab(tabName, clickedTab) {
             // Hide all tab contents
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(content => content.classList.remove('active'));
@@ -1022,7 +1022,9 @@
             document.getElementById(tabName).classList.add('active');
             
             // Add active class to clicked tab
-            event.target.classList.add('active');
+            if (clickedTab) {
+                clickedTab.classList.add('active');
+            }
         }
 
         // Smooth scrolling for navigation links
