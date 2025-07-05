@@ -33,7 +33,7 @@
                 position: fixed;
                 top: 0;
                 right: -100vw;
-                width: 50vw;
+                width: 40vw;
                 height: 100vh;
                 background: rgba(255,255,255,0.98);
                 box-shadow: -2px 0 8px rgba(0,0,0,0.05);
@@ -58,6 +58,11 @@
             }
             .hamburger {
                 display: flex;
+                position: absolute;
+                top: 50%;
+                right: 2rem;
+                transform: translateY(-50%);
+                z-index: 3001;
             }
         }
         @media (max-width: 900px) {
@@ -67,7 +72,7 @@
         }
         @media (max-width: 600px) {
             .nav-links {
-                width: 90vw;
+                width: 70vw;
             }
         }
         /* Hamburger active state (optional for animation) */
