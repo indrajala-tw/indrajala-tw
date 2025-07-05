@@ -421,7 +421,7 @@
         }
 
         .tab {
-            padding: 1rem 2rem;
+            padding: 0.5rem 1rem;
             background: none;
             border: none;
             cursor: pointer;
@@ -429,35 +429,19 @@
             color: #64748B;
             transition: all 0.3s ease;
             position: relative;
-            border-radius: 25px;
-            margin: 0 0.5rem;
-        }
-
-        .tab::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, #991B1B, #DC2626);
-            opacity: 0;
-            border-radius: 25px;
-            transition: opacity 0.3s ease;
-            z-index: -1;
+            margin: 0 1rem;
+            text-decoration: none;
         }
 
         .tab.active {
-            color: white;
-            border-bottom: none;
-        }
-
-        .tab.active::before {
-            opacity: 1;
+            color: #991B1B;
+            font-weight: 600;
+            border-bottom: 2px solid #991B1B;
         }
 
         .tab:hover {
             color: #991B1B;
+            text-decoration: underline;
         }
 
         .tab-content {
@@ -882,9 +866,9 @@
                 
 
                 <div class="tabs">
-                    <button class="tab active" onclick="showTab('knowledge')">佛學資料庫</button>
-                    <button class="tab" onclick="showTab('study')">研讀平台</button>
-                    <button class="tab" onclick="showTab('practice')">生活應用</button>
+                    <span class="tab active" onclick="showTab('knowledge')">佛學資料庫</span>
+                    <span class="tab" onclick="showTab('study')">研讀平台</span>
+                    <span class="tab" onclick="showTab('practice')">生活應用</span>
                 </div>
 
                 <div id="knowledge" class="tab-content active">
@@ -947,8 +931,8 @@
                 <p class="section-subtitle">誠邀所有關心佛教未來的朋友們，一同與我們共同將佛法帶給未來的世代</p>
 
                 <div class="tabs">
-                    <button class="tab active" onclick="showTab('collaborate', this)">歡迎加入</button>
-                    <button class="tab" onclick="showTab('sponsor', this)">護持贊助</button>
+                    <span class="tab active" onclick="showTab('collaborate', this)">歡迎加入</span>
+                    <span class="tab" onclick="showTab('sponsor', this)">護持贊助</span>
                 </div>
 
                 <div id="collaborate" class="tab-content active">
