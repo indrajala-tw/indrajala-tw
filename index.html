@@ -581,6 +581,30 @@
             text-decoration: underline;
             text-decoration-color: white;
         }
+        
+        /* Red watercolor background for vision text box */
+        #about .card {
+            background: url('assets/red water color.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #about .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: 1;
+        }
+        
+        #about .card > * {
+            position: relative;
+            z-index: 2;
+        }
     </style>
 </head>
 <body>
