@@ -43,7 +43,7 @@
                 padding: 5rem 2rem 2rem 2rem;
                 gap: 2rem;
                 transition: right 0.3s;
-                z-index: 1000;
+                z-index: 2000;
             }
             .nav-links.open {
                 right: 0;
@@ -72,13 +72,13 @@
         }
         /* Hamburger active state (optional for animation) */
         .hamburger.active span:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
+            transform: translateY(8.5px) rotate(45deg) !important;
         }
         .hamburger.active span:nth-child(2) {
-            opacity: 0;
+            opacity: 0 !important;
         }
         .hamburger.active span:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
+            transform: translateY(-8.5px) rotate(-45deg) !important;
         }
 
         * {
@@ -568,9 +568,7 @@
                 font-size: 2rem;
             }
             
-            .nav-links {
-                display: none;
-            }
+
             
             .project-flow {
                 flex-direction: column;
