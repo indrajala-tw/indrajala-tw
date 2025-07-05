@@ -41,7 +41,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.1);
             z-index: -1;
         }
 
@@ -135,7 +135,7 @@
         }
 
         .hero {
-            background: #FFFFFF;
+            background: transparent;
             position: relative;
             padding: 2rem 0 4rem 0;
             min-height: auto;
@@ -154,11 +154,16 @@
             text-align: left;
             position: relative;
             z-index: 2;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
         }
 
         .hero-video {
             flex: 1;
             position: relative;
+            background: transparent;
         }
 
         .hero-video video {
@@ -171,11 +176,12 @@
         }
 
         .hero h1 {
-            font-size: 3.2rem;
+            font-size: 2.5rem;
             margin-bottom: 1.5rem;
             color: #2D3748;
             font-weight: 300;
             letter-spacing: 1px;
+            white-space: nowrap;
         }
 
         .hero p {
@@ -588,6 +594,9 @@
             background-size: cover;
             position: relative;
             overflow: hidden;
+            border: none !important;
+            box-shadow: none !important;
+            outline: none !important;
         }
         
         #about .card::before {
