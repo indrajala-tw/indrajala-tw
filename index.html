@@ -492,6 +492,57 @@
         .tab-content .card p {
             line-height: 2.2;
         }
+        
+        /* Foundation Registration Section */
+        .foundation-registration {
+            padding: 0.5rem 0;
+            background: #FFFFFF;
+        }
+        
+        .registration-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .registration-line {
+            width: 100%;
+            height: 2px;
+            background-color: #ab1a1f;
+            margin: 0.5rem 0;
+        }
+        
+        .registration-content h3 {
+            font-size: 1.5rem;
+            color: #2D3748;
+            margin: 0;
+            font-weight: 500;
+        }
+        
+        .registration-content p {
+            font-size: 1rem;
+            color: #4A5568;
+            margin: 0.5rem 0;
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .foundation-registration {
+                padding: 0.3rem 0;
+            }
+            
+            .registration-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .registration-content p {
+                font-size: 0.9rem;
+            }
+            
+            .registration-line {
+                margin: 0.3rem 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -808,24 +859,19 @@
                 </div>
             </div>
         </section>
-
-
-        <!-- 基金會資訊 -->
-        <section style="padding: 2rem 0; background-color: #f8f9fa;">
-            <div class="container">
-                <div class="card">
-                    <h3>因陀羅華基金會為在台灣正式註冊的非營利組織</h3>
-                    <p style="text-align: center; font-size: 1.1rem; font-weight: 600;">
-                        因陀羅網基金會為在台灣正式註冊的非營利組織
-                    </p>
-                    <p style="text-align: center; margin-top: 1rem;">
-                        我們承諾所有資金將完全用於佛法弘揚和知識保存事業，
-                        定期公開財務報告，接受各界監督。
-                    </p>
-                </div>
-            </div>
-        </section>
     </main>
+
+    <!-- 基金會註冊資訊 -->
+    <section class="foundation-registration">
+        <div class="container">
+            <div class="registration-content">
+                <div class="registration-line"></div>
+                <h3>因陀羅華基金會為在台灣正式註冊的非營利組織</h3>
+                <p>我們承諾所有資金將完全用於佛法弘揚和知識保存事業，定期公開財務報告，接受各界監督。</p>
+                <div class="registration-line"></div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
